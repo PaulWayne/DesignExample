@@ -49,7 +49,7 @@ public class NavigationDrawerAdapter  extends  RecyclerView.Adapter<NavigationDr
 
     @Override
     public int getItemCount() {
-        return 0;
+        return data.size();
     }
 
     class  MyViewHolder extends  RecyclerView.ViewHolder {

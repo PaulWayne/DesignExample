@@ -31,7 +31,7 @@ import java.util.List;
  * Use the {@link FragmentDrawer#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentDrawer extends Fragment {
+public class FragmentDrawer extends android.support.v4.app.Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -126,6 +126,8 @@ public class FragmentDrawer extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
+
+//    Retourne la liste des items
     public static List<NavDrawerItem> getData(){
         List<NavDrawerItem> navDrawerItems = new ArrayList<>();
     // preparing navigation drawer items
@@ -137,16 +139,7 @@ public class FragmentDrawer extends Fragment {
         return navDrawerItems;
     }
 
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
     public void setUp(int fragmentId, DrawerLayout mdrawerLayout, final Toolbar toolbar) {
         containerView = getActivity().findViewById(fragmentId);
         drawerLayout = mdrawerLayout;
